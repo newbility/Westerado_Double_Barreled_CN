@@ -1,25 +1,38 @@
 # 西部正义：双管猎枪 简体中文补丁
 
-《Westerado: Double Barreled》非官方简体中文补丁。以原版英语文本为依据，保留原版英语语音与音效，使用缝合像素字体。
+《Westerado: Double Barreled》非官方简体中文补丁。以原版英语文本为依据，保留英语语音与音效；GPT-6 Luna（max）初译，GPT-6.1 Sol（high）校对，中文字体使用 Fusion Pixel Font（缝合像素字体）。
 
 ## 下载与适配
 
-- [0.1.0-rc.3 候选测试版](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/tag/v0.1.0-rc.3)
-- [图形安装版 ZIP](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/download/v0.1.0-rc.3/Westerado_zh-CN_0.1.0-rc.3.zip) · [SHA-256 校验文件](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/download/v0.1.0-rc.3/Westerado_zh-CN_0.1.0-rc.3.zip.sha256)
-- 适配 64 位 Windows 上的 Steam 版，验证基线为 App ID 275200、Build ID 16510519。安装器会校验两个游戏资源文件的 SHA-256。
+- [0.1.0-rc.5 候选测试版](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/tag/v0.1.0-rc.5)
+- [图形安装版 ZIP](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/download/v0.1.0-rc.5/Westerado_zh-CN_0.1.0-rc.5.zip) · [SHA-256 校验文件](https://github.com/newbility/Westerado_Double_Barreled_CN/releases/download/v0.1.0-rc.5/Westerado_zh-CN_0.1.0-rc.5.zip.sha256)
+- 适配 64 位 Windows 上的 Steam 版，验证基线为 App ID 275200、Build ID 16510519。安装器会校验游戏资源文件的 SHA-256。
+- 补丁独立可用，无需 Python、Java、开发工具库或另行安装字体。只含差分及允许再分发的组件，不含完整游戏。
 
 ## 安装与恢复
 
 1. 关闭游戏，解压整个 ZIP，双击 `Install-GUI.cmd`。
-2. 点击「浏览」选择游戏目录，或直接输入或粘贴路径。请选择含 `WesteradoDB.exe` 的文件夹。
-3. 点击「安装 / 升级」。保留有效原版备份的 rc.1、rc.2 可直接升级。安装器在写入前校验资源，存档不受影响。
-4. 可以在同一窗口点击「检查状态」或「恢复英文原版」。请保留游戏目录里的 `.westerado-cn-backup`。
+2. 点击「浏览」选择游戏目录，或手动输入、粘贴路径；请选择含 `WesteradoDB.exe` 的文件夹。
+3. 点击「安装 / 升级」。保留有效原版备份的 rc.1、rc.2、rc.3、rc.4 可直接升级。
+4. 同一个窗口可「检查状态」或「恢复英文原版」。请保留游戏目录中的 `.westerado-cn-backup`。安装脚本不读写游戏存档。
 
-## 版本变更与实测范围
+## 本次更新
 
-- rc.3 修正哥哥交枪场景的「接过枪」「确认」和「装一发」，调整对话选项按钮间距。补译 22 条按键提示，覆盖武器切换、日志、挣脱和牌桌等操作。
-- 保留 rc.2 的存档页、设置和按键标签排版修正。实测覆盖开场对话、存档页、图像、音频、改键弹窗、角色选择和暂停菜单，涉及 640×360 与 1280×720 窗口。
-- 37 个提示通过运行时检查，图形安装及恢复已实测，另通过 46 项命令行安装检查。牌桌和其他分支的提示尚未逐场景触发，完整剧情、所有分支、多人模式、其他分辨率及逐条英语听音校对仍未覆盖。
+- 修正「存档信息」「时间」「已探索」「双管猎枪」及招牌文字发虚；使用完整像素字形，并调整小标签与数值的位置。
+- 对齐「存档1／2／3」等中文标签中的数字，保留原版英文字形和纯数字界面的样式。
+- 相比此前公开的 rc.3，补齐雕像、墓碑、路牌、物品介绍、土匪姓名和代码台词、加载提示、中文大标题、默认存档名称、单人／合作／取消选项及 18 处图片招牌。NTS 保留原品牌缩写。
+- 保留此前的接过枪、确认、单发装弹等按键提示和设置页排版修正。累计 54 批、6,476 条原文完成初译及校对。
+
+## 实测范围与限制
+
+- 隔离游戏实测 640×360、1280×720 的标题、存档与读档，以及图像、音频、按键设置；复查雕像、方向路牌、土匪姓名与台词、加载提示、酒馆招牌。部分场景使用测试驱动触发游戏原组件，测试驱动不进入玩家补丁。
+- 原生渲染检查 216 条世界文本映射、18 处招牌与 8 个混排／标签样例；另检查源文、控制标记、字体覆盖和原对话逻辑保留。
+- 从最终 ZIP 解包后通过 64 项安装检查，包含 rc.1—rc.4 升级、原版备份缺失时拒绝升级、安装校验和恢复；图形入口另实测手输目录、浏览选择、安装、校验和恢复。
+- 2026-11-21，项目使用者反馈试用后「暂时没发现什么问题」。这不代表完整通关：完整剧情、所有分支与结局、合作游玩、全部建筑状态、其他分辨率及逐条英语听音校对仍未覆盖。本版本继续标记为候选测试版。
+
+## 组件与许可
+
+中文译文采用 CC BY-NC-SA 4.0；游戏原文及资源权利仍属于其权利人。Fusion Pixel Font 使用 OFL-1.1，随附字源许可；xdelta3 解码器为 GPL-2.0-or-later，包内附对应源码、组件许可及来源信息。译文协议不替代字体和程序各自的许可证。
 
 ## 关于「解锁帧率」
 
@@ -27,13 +40,13 @@
 
 ## 实机截图
 
-![中文版存档界面](docs/images/rc2-save.png)
+![中文标题与存档界面](docs/images/rc5-save.png)
 
-![中文版按键设置](docs/images/rc2-bindings.png)
+![中文按键设置](docs/images/rc5-controls.png)
 
-![接过枪与确认选项](docs/images/rc3-confirm.png)
+![游戏中的中文酒馆招牌](docs/images/rc5-saloon.png)
 
-![单发装弹提示](docs/images/rc3-reload.png)
+![游戏中的中文雕像碑文](docs/images/rc5-statue.png)
 
 ## 版权与免责声明
 
